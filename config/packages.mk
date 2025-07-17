@@ -5,7 +5,6 @@ PRODUCT_PACKAGES += \
 # Binaries
 PRODUCT_PACKAGES += \
     bash \
-    htop \
     nano \
 	zstd
 
@@ -21,11 +20,6 @@ endif
 # Component overrides
 PRODUCT_PACKAGES += \
     halcyon-component-overrides.xml
-
-# Config
-PRODUCT_PACKAGES += \
-    SimpleDeviceConfig \
-    SimpleSettingsConfig
 
 # Credential storage
 PRODUCT_PACKAGES += \
@@ -90,9 +84,6 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/bin/procmem
 endif
 
-# Root
-PRODUCT_PACKAGES += \
-    adb_root
 ifneq ($(TARGET_BUILD_VARIANT),user)
 ifeq ($(WITH_SU),true)
 PRODUCT_PACKAGES += \
@@ -106,10 +97,6 @@ endif
 # Sensitive Phone Numbers list
 PRODUCT_PACKAGES += \
     sensitive_pn.xml
-
-# SetupWizard
-PRODUCT_PACKAGES += \
-    Updater
 
 PRODUCT_COPY_FILES += \
     vendor/halcyon/prebuilt/common/etc/init/init.halcyon-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.halcyon-updater.rc
@@ -138,10 +125,7 @@ PRODUCT_PACKAGES += \
 # System applications
 PRODUCT_PACKAGES += \
     AvatarPicker \
-    LatinIME \
-    Etar \
-    ExactCalculator \
-    SetupWizard
+    LatinIME
 
 # Telephony packages
 PRODUCT_PACKAGES += \
